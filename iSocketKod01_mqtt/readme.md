@@ -49,7 +49,35 @@ DS18B20.requestTemperatures();       // arahan baca suhu
 ```
 
 ```
+## Baca suhu DHT22 (AM2301)
+```
+#include "DHT.h"
+```
+```
+#define DHTPIN 4     
+#define DHTTYPE DHT21
 
+DHT dht(DHTPIN, DHTTYPE);
+```
+# void setup
+```
+dht.begin();
+```
+```
+ float humid = dht.readHumidity();
+  float temp = dht.readTemperature();
+
+  Serial.print("Humidity: ");
+  Serial.println(humid);
+  Serial.print("Temperature: ");
+  Serial.print(temp);
+  Serial.println("°C ");
+
+ client.publish("kluangman/temp", String(temp));  
+ client.publish("kluangman/humid", String(humid));  
+
+
+```
 ## Kawalan Relay
 ```
  if(String(topic) == "socketLA01/buzzer") 
@@ -107,4 +135,6 @@ DS18B20.requestTemperatures();       // arahan baca suhu
       }
   }
 ```
+
+
 
