@@ -120,47 +120,7 @@ void loop() {
     client.publish("/hello", "world");
 
 //------sensor suhu -------------------------------------------------------
-  DS18B20.requestTemperatures();       // arahan baca suhu
-  dataSuhuC = DS18B20.getTempCByIndex(0);  // nilai suhu disimpan dalam pembolehubah tempC
- 
-  Serial.print("Temperature: ");
-  Serial.print(dataSuhuC);    
-  Serial.println("°C");
-  client.publish("socketLA01/suhu", String(dataSuhuC));
-
-  if (dataSuhuC < 25) {
-    Serial.println(" suhu paras sejuk ");    
-  }
-  else if (dataSuhuC > 25 && dataSuhuC < 33 ) {
-    Serial.println(" suhu paras normal ");  
-    strcpy(statusSuhu, "suhu paras normal");
-   // display.display();
-  }
-
-  else if (dataSuhuC > 33 && dataSuhuC < 41 ) {
-    Serial.println("suhu paras panas ");   
-    strcpy(statusSuhu, "suhu paras panas ");
-    digitalWrite(buzzer,HIGH);
-    delay(10);
-    digitalWrite(buzzer,LOW);
-    delay(100);
-   
-  }
-
-  else if (dataSuhuC > 40 ) {
-  Serial.println("suhu paras bahaya ");    
-  strcpy(statusSuhu, "suhu paras bahaya");
-  digitalWrite(buzzer,HIGH);
-  delay(100);
-  digitalWrite(buzzer,LOW);
- 
-  }
-
-  else {
-    Serial.print(" bacaan suhu tidak normal ");  
-    digitalWrite(buzzer,LOW);
-    digitalWrite(buzzer,LOW);
-  }
+  
 
 
 //------sensor LDR -------------------------------------------------------
