@@ -53,16 +53,18 @@ DS18B20.requestTemperatures();       // arahan baca suhu
 ```
 #include "DHT.h"
 ```
+## header
 ```
 #define DHTPIN 4     
 #define DHTTYPE DHT21
 
 DHT dht(DHTPIN, DHTTYPE);
 ```
-# void setup
+## void setup
 ```
 dht.begin();
 ```
+## void loop
 ```
  float humid = dht.readHumidity();
   float temp = dht.readTemperature();
