@@ -79,8 +79,15 @@ dht.begin();
 
  client.publish("kluangman/temp", String(temp));  
  client.publish("kluangman/humid", String(humid));  
+```
 
+## ANALOG sensor
+```
+  dataAnalog = analogRead(sensorLDR);
+  Serial.print("Cahaya: ");
+  Serial.println(dataAnalog);  
 
+  client.publish("socketLA01/ldr", String(dataLDR));  
 ```
 ## Kawalan Relay
 ```
