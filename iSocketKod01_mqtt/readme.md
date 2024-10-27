@@ -50,10 +50,12 @@ DS18B20.requestTemperatures();       // arahan baca suhu
 
 ```
 ## Baca suhu DHT22 (AM2301)
+
+## header
 ```
 #include "DHT.h"
 ```
-## header
+
 ```
 #define DHTPIN 4     
 #define DHTTYPE DHT21
